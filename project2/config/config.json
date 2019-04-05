@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "devUser",
-    "password": "ucdBootcamp",
+    "username": "fantasyDraft",
+    "password": "UCDbootcamp",
     "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
