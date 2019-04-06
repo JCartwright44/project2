@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "devUser",
-    "password": "ucdBootcamp",
-    "database": "exampledb",
-    "host": "localhost",
+    "username": "czbxvpq0o8oyg0jf",
+    "password": "oraqumhhdskl74l7",
+    "database": "jxp3rqqq8le5n0c8",
+    "host": "fnx6frzmhxw45qcb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
