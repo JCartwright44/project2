@@ -12,10 +12,10 @@ module.exports = function (app) {
   });
   // Load Dashboard page
   app.get("/dashboard", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("dashboard", {
+    db.Players.findAll({}).then(function(dbPlayers) {
+      res.render("dashboard-owner", {
         msg: "Your dashboard",
-        examples: dbExamples
+        players: dbPlayers
       });
     });
   });
@@ -26,6 +26,9 @@ module.exports = function (app) {
     ) {
       res.render("Players", {
         example: dbPlayers
+      });
+    });
+  });
   app.get("/example/:id", function (req, res) {
     db.Example.findOne({
       where: {

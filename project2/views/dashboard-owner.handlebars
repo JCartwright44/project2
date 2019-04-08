@@ -46,7 +46,14 @@
           <p class='pos' id='rb'>Runningback</p>
           <p class='pos' id='wr'>Wide Reciever</p>
           <p class='pos' id='te'>Tight End</p>
-          <div class='playerTable'></div>
+          <div class='playerTable'>
+            {{#each Players}}
+            <tr>
+                <td>{{this.playerName}}</td>
+                <td>{{this.college}}</td>
+            </tr>
+        {{/each}}
+          </div>
         </div>
       </div>
     </div>
