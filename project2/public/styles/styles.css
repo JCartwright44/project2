@@ -5,3 +5,27 @@
 #login-page {
   width: 50%;
 }
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100%;
+}
+
+.helperText {
+  font-size: 12px;
+}
+
+.pos {
+  float: left;
+  margin-right: 30px;
+}
+
+.newTeam {
+  position: absolute;
+  bottom: 5px;
+}
