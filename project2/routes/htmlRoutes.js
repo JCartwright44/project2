@@ -11,9 +11,18 @@ module.exports = function (app) {
     });
   });
   // Load Dashboard page
-  app.get("/dashboard", function(req, res) {
+  app.get("/dashboard-owner", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("dashboard", {
+      res.render("dashboard-owner", {
+        msg: "Your dashboard",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/dashboard-commissioner", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("dashboard-commissioner", {
         msg: "Your dashboard",
         examples: dbExamples
       });
@@ -26,6 +35,9 @@ module.exports = function (app) {
     ) {
       res.render("Players", {
         example: dbPlayers
+      });
+    });
+  });
   app.get("/example/:id", function (req, res) {
     db.Example.findOne({
       where: {

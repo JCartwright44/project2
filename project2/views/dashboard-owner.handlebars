@@ -1,22 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">App Name</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Your Name1 - Team Owner
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="#">Dashboard</a>
-        <a class="dropdown-item" href="#">Draft Room</a>
-        <a class="dropdown-item" href="#">Log Out</a>
-      </div>
-    </li>
-    </ul>
+  <div class="btn-group">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      Right-aligned menu
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <button class="dropdown-item" type="button">Action</button>
+      <button class="dropdown-item" type="button">Another action</button>
+      <button class="dropdown-item" type="button">Something else here</button>
+    </div>
   </div>
 </nav>
 
@@ -27,8 +20,8 @@
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">Draftboard</h5>
-          <p class="helperText">Add your picks for your upcoming draft</p>
           <hr>
+          <p class="helperText">Add your picks for your upcoming draft</p>
           <p id='board1'>1. First round pick</p>
           <p id='board2'>2. Second round pick</p>
           <p id='board3'>3. Third round pick</p>
@@ -46,6 +39,7 @@
           <p class='pos' id='rb'>Runningback</p>
           <p class='pos' id='wr'>Wide Reciever</p>
           <p class='pos' id='te'>Tight End</p>
+          <p class='pos' id='all'>All</p>
           <div class='playerTable'></div>
         </div>
       </div>
@@ -57,7 +51,7 @@
           <h5 class="card-title">My teams</h5>
           <hr>
           <div class="myTeams"></div>
-          <button class='newTeam'>Create new team</button>
+          <button class='newTeam'>New team</button>
         </div>
       </div>
     </div>
