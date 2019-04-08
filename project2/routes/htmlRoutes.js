@@ -11,9 +11,18 @@ module.exports = function (app) {
     });
   });
   // Load Dashboard page
-  app.get("/dashboard", function(req, res) {
-    db.Players.findAll({}).then(function(dbPlayers) {
+  app.get("/dashboard-owner", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
       res.render("dashboard-owner", {
+        msg: "Your dashboard",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/dashboard-commissioner", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("dashboard-commissioner", {
         msg: "Your dashboard",
         players: dbPlayers
       });

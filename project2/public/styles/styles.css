@@ -22,10 +22,17 @@
 
 .pos {
   float: left;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .newTeam {
   position: absolute;
   bottom: 5px;
+  left: 5%;
+}
+
+.newLeague {
+  position: absolute;
+  bottom: 5px;
+  right: 5%;
 }
