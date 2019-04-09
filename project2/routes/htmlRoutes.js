@@ -38,17 +38,6 @@ module.exports = function (app) {
       });
     });
   });
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
