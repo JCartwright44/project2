@@ -34,6 +34,28 @@ module.exports = function(app) {
       res.render("dashboard-commissioner", {
         msg: "Your dashboard",
         examples: dbPlayers
+  app.get("/draftpage-owner", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("draftpage-owner", {
+        msg: "Your draftpage",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/draftpage-commissioner", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("draftpage-commissioner", {
+        msg: "Your draftpage",
+        examples: dbExamples
+      });
+    });
+  });
+  app.get("/draft", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("draft", {
+        msg: "Your draftpage",
+        examples: dbExamples
       });
     });
   });
