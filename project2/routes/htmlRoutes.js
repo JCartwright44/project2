@@ -28,6 +28,32 @@ module.exports = function (app) {
       });
     });
   });
+
+  app.get("/draftpage-owner", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("draftpage-owner", {
+        msg: "Your draftpage",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/draftpage-commissioner", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("draftpage-commissioner", {
+        msg: "Your draftpage",
+        examples: dbExamples
+      });
+    });
+  });
+  app.get("/draft", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("draft", {
+        msg: "Your draftpage",
+        examples: dbExamples
+      });
+    });
+  });
   // Load example page and pass in an example by id
   app.get("/players", function(req, res) {
     db.Players.findOne({ where: { id: req.params.id } }).then(function(
