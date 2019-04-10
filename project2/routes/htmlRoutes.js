@@ -24,7 +24,7 @@ module.exports = function (app) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("dashboard-commissioner", {
         msg: "Your dashboard",
-        examples: dbExamples
+        players: dbPlayers
       });
     });
   });
