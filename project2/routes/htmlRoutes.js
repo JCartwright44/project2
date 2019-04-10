@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(Players) {
-      res.render("index", {
+    db.Players.findAll({}).then(function(Players) {
+      res.render("signup.hbs", {
         msg: "Welcome!",
         examples: Players
       });
@@ -34,20 +34,23 @@ module.exports = function(app) {
       res.render("dashboard-commissioner", {
         msg: "Your dashboard",
         examples: dbPlayers
+      });
+    });
+  });
   app.get("/draftpage-owner", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Players.findAll({}).then(function(dbPlayers) {
       res.render("draftpage-owner", {
         msg: "Your draftpage",
-        examples: dbExamples
+        examples: dbPlayers
       });
     });
   });
 
   app.get("/draftpage-commissioner", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Players.findAll({}).then(function(dbPlayers) {
       res.render("draftpage-commissioner", {
         msg: "Your draftpage",
-        examples: dbExamples
+        examples: dbPlayers
       });
     });
   });

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign-Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+ 
+<body>
+     <style>
+    #main{
+        margin: 200px;
+    }
+    h2{
+        text-align: center
+    }
+    body{
+        background-image: url("app/images/fantasy.png")
+
+    }
+    </style>
+    <h2>Sign-Up for Fantasy Sports</h2>
+    <div id="main">
+    <form id="signup" name="signup" method="post" action="/signup">
+        <i class="fas fa-football-ball"></i>
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="email" />
+        <i class="fas fa-football-ball"></i>
+        <label for="firstname">Firstname</label>
+        <input name="firstname" type="text" />
+        <i class="fas fa-football-ball"></i>
+        <label for="lastname">Lastname</label>
+        <input name="lastname" type="text" />
+        <i class="fas fa-football-ball"></i>
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <input class="btn" type="submit" value="Sign Up" />
+        <p>Already a member, then sign in!</p>
+        <a href="/signin">Continue</a>
+    </form>
+ </div>
+</body>
+ 
+</html>
