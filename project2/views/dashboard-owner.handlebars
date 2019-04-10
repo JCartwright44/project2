@@ -16,6 +16,7 @@
 
 <div class="container">
   <div class="row">
+    <div>{{msg}}</div>
     <div class="col-3 equal">
       <div class="card mt-4">
         <div class="card-body">
@@ -40,7 +41,17 @@
           <p class='pos' id='wr'>Wide Reciever</p>
           <p class='pos' id='te'>Tight End</p>
           <p class='pos' id='all'>All</p>
-          <div class='playerTable'></div>
+          <div class='playerTable'>{{#each examples}}
+            <p>
+                <tr>
+                <td>{{playerName}}</td>
+                <td>{{college}}</td>
+                <td>{{height}}</td>
+                <td>{{weight}}</td>
+                <td>{{adp}}</td>   
+                </tr>
+            </p>
+        {{/each}}
         </div>
       </div>
     </div>

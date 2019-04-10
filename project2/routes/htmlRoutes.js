@@ -1,30 +1,39 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+  app.get("/", function(req, res) {
+    db.Example.findAll({}).then(function(Players) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: Players
       });
     });
   });
   // Load Dashboard page
   app.get("/dashboard-owner", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.owners.findAll({}).then(function(dbPlayers) {
       res.render("dashboard-owner", {
         msg: "Your dashboard",
-        examples: dbExamples
+        examples: dbPlayers
       });
     });
   });
 
   app.get("/dashboard-commissioner", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Players.findAll({}).then(function(dbPlayers) {
       res.render("dashboard-commissioner", {
         msg: "Your dashboard",
-        examples: dbExamples
+        examples: dbPlayers
+      });
+    });
+  });
+
+  app.get("/players", function(req, res) {
+    db.Players.findAll({}).then(function(dbPlayers) {
+      res.render("dashboard-commissioner", {
+        msg: "Your dashboard",
+        examples: dbPlayers
       });
     });
   });
@@ -38,12 +47,12 @@ module.exports = function (app) {
       });
     });
   });
-  app.get("/example/:id", function (req, res) {
+  app.get("/example/:id", function(req, res) {
     db.Example.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
+    }).then(function(dbExample) {
       res.render("example", {
         example: dbExample
       });
@@ -51,7 +60,7 @@ module.exports = function (app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
