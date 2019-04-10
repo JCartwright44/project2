@@ -15,6 +15,7 @@
 
 
 <div class="container">
+    <div>{{msg}}</div>
     <div class="row">
         <div class="col-3 equal">
             <div class="card mt-4">
@@ -40,7 +41,40 @@
                     <p class='pos' id='wr'>Wide Reciever</p>
                     <p class='pos' id='te'>Tight End</p>
                     <p class='pos' id='all'>All</p>
-                    <div class='playerTable'></div>
+                    <div class='playerTable'>
+                        {{#each examples}}
+            <p>
+                <tr>
+                <td>{{playerName}}</td>
+                <td>{{college}}</td>
+                <td>{{height}}</td>
+                <td>{{weight}}</td>
+                <td>{{adp}}</td>   
+                </tr>
+            </p>
+        {{/each}}</div></div>
+                    {{!-- table of players --}}
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='nameHead'>Name</th>
+                                <th scope="col" id='collegeHead'>College</th>
+                                <th scope="col" id='heightHead'>Hgt</th>
+                                <th scope="col" id='weightHead'>Wgt</th>
+                                <th scope="col" id='adpHead'>ADP</th>
+                                <th scope="col" id='add'>Add</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <td id='name'></td>
+                                <td id='college'></td>
+                                <td id='height'></td>
+                                <td id='weight'></td>
+                                <td id='ADP'></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -73,4 +107,3 @@
 
     </div>
 </div>
-
