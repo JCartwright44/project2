@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+<head>
+    <title>Sign-In</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+
+</head>
+ 
+<body>
+    <style>
+    #login{
+        margin: 200px;
+    }
+    h2{
+        text-align: center
+    }
+    body{
+        background-image: url("app/images/fantasy.png")
+
+    }
+    </style>
+    <h2>Sign-in to your Fantasy Account</h2>
+    <div class="row" id="login">
+    <form id="signin" name="signin" method="post" action="signin">
+        <i class="fas fa-football-ball"></i>
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="text" />
+        <i class="fas fa-football-ball"></i>
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <input class="btn" type="submit" value="Sign In" />
+    </form>
+ </div>
+</body>
+ 
+</html>
