@@ -30,7 +30,7 @@ module.exports = function(app, passport) {
 ));
   // Load Dashboard page
   app.get("/dashboard-owner", function(req, res) {
-    db.owners.findAll({}).then(function(dbPlayers) {
+    db.Players.findAll({}).then(function(dbPlayers) {
       res.render("dashboard-owner", {
         msg: "Your dashboard",
         examples: dbPlayers
@@ -55,14 +55,20 @@ module.exports = function(app, passport) {
       });
     });
   });
-
   app.get("/draftpage-owner", function(req, res) {
-    db.Players.findAll({}).then(function(dbPlayers) {
-      res.render("draftpage-owner", {
-        msg: "Your draftpage",
-        examples: dbPlayers
+    var obj = {};
+    db.Players.findAll({})
+      .then(function(dbExamples) {
+        obj.examples = dbExamples;
+      })
+      .then(function() {
+        return db.Players.findOne({ where: { id: 3 } });
+      })
+      .then(function(onePlayer) {
+        obj.onePlayer = onePlayer;
+        console.log(obj);
+        res.render("dashboard-owner", obj);
       });
-    });
   });
 
   app.get("/draftpage-commissioner", function(req, res) {
@@ -84,11 +90,10 @@ module.exports = function(app, passport) {
   // Load example page and pass in an example by id
   app.get("/players", function(req, res) {
     db.Players.findOne({ where: { id: req.params.id } }).then(function(
-      dbPlayers
+      dbPlayer
     ) {
-      res.render("Players", {
-        example: dbPlayers
-      });
+      console.log("dbPlayer:", dbPlayer);
+      res.render("Players", dbPlayer);
     });
   });
 
