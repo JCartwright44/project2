@@ -1,7 +1,7 @@
 var bCrypt = require('bcrypt-nodejs');
 
 module.exports = function(passport, user) {
-    var User = user;
+    var Owners = user;
     var LocalStrategy = require('passport-local').Strategy;
 
 passport.use('local-signup', new LocalStrategy(
@@ -19,10 +19,7 @@ passport.use('local-signup', new LocalStrategy(
             return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 
         };
-
-
-
-        User.findOne({
+        Owners.findOne({
             where: {
                 email: email
             }
@@ -55,7 +52,7 @@ passport.use('local-signup', new LocalStrategy(
 
                     };
 
-                User.create(data).then(function(newUser, created) {
+                Owners.create(data).then(function(newUser, created) {
 
                     if (!newUser) {
 
@@ -90,7 +87,7 @@ passport.serializeUser(function(user, done) {
 // deserialize user 
 passport.deserializeUser(function(id, done) {
  
-    User.findByPk(id).then(function(user) {
+    Owners.findByPk(id).then(function(user) {
  
         if (user) {
  
@@ -124,7 +121,7 @@ passport.use('local-signin', new LocalStrategy(
  
     function(req, email, password, done) {
  
-        var User = user;
+        var Owners = user;
  
         var isValidPassword = function(userpass, password) {
  
@@ -132,7 +129,7 @@ passport.use('local-signin', new LocalStrategy(
  
         }
  
-        User.findOne({
+        Owners.findOne({
             where: {
                 email: email
             }
