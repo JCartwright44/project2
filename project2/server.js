@@ -46,7 +46,7 @@ require("./routes/htmlRoutes")(app, passport);
 var syncOptions = { force: false };
 
 //load passport strategies
-require('./config/passport/passport')(passport, models.user);
+require('./config/passport/passport')(passport, models.owners);
 
 //Sync Database
 models.sequelize.sync().then(function() {
