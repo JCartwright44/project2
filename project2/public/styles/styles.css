@@ -53,3 +53,90 @@
   padding-top: 0px;
   padding-bottom: 0px;
 }
+
+body {
+  background-color: #E1E2E1;
+}
+
+.navbar {
+  background-color: #37474f;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+}
+
+.navbar-brand {
+  color: white;
+  letter-spacing: 3px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 36px;
+
+}
+
+.card-title {
+  margin-top: 8px;
+}
+
+.dropdown-menu {
+  left: auto;
+  right: 0px;
+}
+
+.dropdown-toggle {
+  background-color: #1775d1
+}
+
+.pickSubmit {
+  background-color: #1775d1;
+  color: white;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.btn:hover { 
+  background-color: #63a4ff;
+}
+
+.card {
+  border-color: #62717b;
+  border-width: thin;
+}
+
+hr {
+  color: #62717b;
+  border-width: thin;
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+@media (max-width: 1000px) {
+  .card-body {
+    width: 100%;
+    float: left;
+  }
+}

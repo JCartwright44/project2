@@ -55,6 +55,7 @@ module.exports = function(app, passport) {
       });
     });
   });
+
   app.get("/draftpage-owner", function(req, res) {
     db.Players.findAll({}).then(function(dbPlayers) {
       res.render("draftpage-owner", {
@@ -73,7 +74,7 @@ module.exports = function(app, passport) {
     });
   });
   app.get("/draft", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Players.findAll({}).then(function(dbExamples) {
       res.render("draft", {
         msg: "Your draftpage",
         examples: dbExamples
