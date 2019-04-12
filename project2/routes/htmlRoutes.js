@@ -98,8 +98,6 @@ app.get('/user', isLoggedIn, function(req, res){
       })
       .then(function(onePlayer) {
         obj.onePlayer = onePlayer;
-        console.log(obj);
-        res.render("draftpage-owner", obj);
       });
       var ownObj = {};
       var ownerPromise = db.owners.findAll({})
@@ -118,7 +116,7 @@ app.get('/user', isLoggedIn, function(req, res){
           console.log("Promise fulfilled")
           console.log("playerObj:",playersObj);
           console.log("ownerObj:",ownObj);
-          res.render("draftpage-owner", {players: playersObj, owner: ownObj});
+          res.render("draftpage-commissioner", {players: playersObj, owner: ownObj});
         })
   });
 
