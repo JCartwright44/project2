@@ -24,7 +24,13 @@ app.use(bodyParser.json());
 app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}));// session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-
+// app.use(function (req, res, next) {
+//   res.locals.success_msg = req.flash('success_msg');
+//   res.locals.error_msg = req.flash('error_msg');
+//   res.locals.error = req.flash('error');
+//   res.locals.user = req.user || null;
+//   next();
+// });
 
 // Handlebars
 app.engine(
@@ -47,7 +53,6 @@ var syncOptions = { force: false };
 
 //load passport strategies
 require('./config/passport/passport')(passport, models.owners);
-
 //Sync Database
 models.sequelize.sync().then(function() {
 console.log('Nice! Database looks fine')
