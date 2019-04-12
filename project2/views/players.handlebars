@@ -17,22 +17,10 @@
 
 
 <div class="container-fluid">
+    {{!-- <div>{{msg}}</div> --}}
     <div class="row">
-        <div class="col-3 equal">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Draftboard</h5>
-                    <hr>
-                    <p class="helperText">Add your picks for your upcoming draft</p>
-                    <p id='board1'>1. First round pick</p>
-                    <p id='board2'>2. Second round pick</p>
-                    <p id='board3'>3. Third round pick</p>
-                    <p id='board4'>4. Fourth round pick</p>
-                    <p id='board5'>5. Fifth round pick</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 equal">
+
+        <div class="col-12 equal">
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Current draft class</h5>
@@ -42,28 +30,22 @@
                     <p class='pos' id='wr'>Wide Reciever</p>
                     <p class='pos' id='te'>Tight End</p>
                     <p class='pos' id='all'>All</p>
-                    <div class='playerTable'></div>
+                    <div class='playerTable'>
+                        {{#each examples}}
+            <p>
+                <tr>
+                <td>{{playerName}}</td>
+                <td>{{college}}</td>
+                <td>{{height}}</td>
+                <td>{{weight}}</td>
+                <td>{{adp}}</td>   
+                </tr>
+            </p>
+        {{/each}}</div></div>
                 </div>
             </div>
         </div>
 
-        <div class="col-3 equal">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title myTeam">My team</h5>
-                    <hr id='hr'>
-                    <p class='rd1'>Round 1: </p>
-                    <p class='rd2'>Round 2: </p>
-                    <p class='rd3'>Round 3: </p>
-                    <p class='rd4'>Round 4: </p>
-                    <p class='rd5'>Round 5: </p>
-                    <div class='clockTime'></div>
-                    <div class='clockTeam'></div>
-                    <button class='pickSubmit'>Confirm draft pick</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="row">
         <div class="col">
             <div class="card mt-4">
@@ -74,5 +56,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>
+

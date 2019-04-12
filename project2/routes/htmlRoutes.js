@@ -49,8 +49,8 @@ module.exports = function(app, passport) {
 
   app.get("/players", function(req, res) {
     db.Players.findAll({}).then(function(dbPlayers) {
-      res.render("dashboard-commissioner", {
-        msg: "Your dashboard",
+      res.render("players", {
+        msg: "Draft class",
         examples: dbPlayers
       });
     });
@@ -67,7 +67,7 @@ module.exports = function(app, passport) {
       .then(function(onePlayer) {
         obj.onePlayer = onePlayer;
         console.log(obj);
-        res.render("dashboard-owner", obj);
+        res.render("draftpage-owner", obj);
       });
   });
 
