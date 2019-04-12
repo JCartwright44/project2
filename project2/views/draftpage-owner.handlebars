@@ -1,6 +1,16 @@
 <nav class="navbar">
     <img class='logo' src="./images/Draft_logo.png" alt="logo">
     <h2 class="navbar-brand">Fantasy Draft Generator</h2>
+    <div>
+      <h1>Hello</h1>
+      <h1>{{user}}</h1>
+  {{#if username}}
+    <p>Hello {{username}}</p>
+  {{else}}
+    <p>Please <a href='/users/login'>Log In</a></p>
+  {{/if}}
+    
+    </div>
     <div class="btn-group">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
@@ -9,7 +19,8 @@
         <div class="dropdown-menu dropdown-menu-right drop-left">
             <button class="dropdown-item" type="button">Dashboard</button>
             <button class="dropdown-item" type="button">Draft Room</button>
-            <button class="dropdown-item" type="button">Log Out</button>
+            <a href="/logout">Log Out</a>
+
         </div>
     </div>
 </nav>
