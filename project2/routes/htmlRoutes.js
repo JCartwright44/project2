@@ -1,11 +1,15 @@
 var db = require("../models");
 var authController = require('../controllers/authcontroller.js');
+var express = require('express');
+var router = express.Router();
 
 module.exports = function (app, passport) {
   // Load index page
-  app.get("/", function (req, res) {
-    db.Players.findAll({}).then(function (Players) {
-      res.render("signup", {
+
+  app.get("/", function(req, res) {
+    db.Players.findAll({}).then(function(Players) {
+      res.render("signin", {
+
         msg: "Welcome!",
         examples: Players
       });
@@ -14,20 +18,32 @@ module.exports = function (app, passport) {
   app.get('/signup', authController.signup);
   app.get('/signin', authController.signin);
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/dashboard-owner',
+
+      successRedirect: '/user',
+
 
     failureRedirect: '/signup'
   }
   ));
-  app.get('/dashboard-owner', isLoggedIn, authController.dashboard);
-  app.get('/logout', authController.logout);
+
+  app.get('/dashboard-owner',isLoggedIn, authController.dashboard);
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/signin');
+  });
   app.post('/signin', passport.authenticate('local-signin', {
-    successRedirect: '/dashboard-owner',
+      successRedirect: '/user',
+
 
     failureRedirect: '/signin'
   }
 
-  ));
+));
+app.get('/user', isLoggedIn, function(req, res){
+  console.log(req.user)
+  res.render('draftpage-owner', { username: req.user.email });
+  });
+
   // Load Dashboard page
   app.get("/dashboard-owner", function (req, res) {
     var obj = {};
@@ -80,10 +96,8 @@ module.exports = function (app, passport) {
       .then(function () {
         return db.Players.findAll({ where: { id: 3 } });
       })
-
-      .then(function (onePlayer) {
-        playersObj.onePlayer = onePlayer;
-        
+      .then(function(onePlayer) {
+        obj.onePlayer = onePlayer;
       });
       var ownObj = {};
       var ownerPromise = db.owners.findAll({})
@@ -102,7 +116,7 @@ module.exports = function (app, passport) {
           console.log("Promise fulfilled")
           console.log("playerObj:",playersObj);
           console.log("ownerObj:",ownObj);
-          res.render("draftpage-owner", {players: playersObj, owner: ownObj});
+          res.render("draftpage-commissioner", {players: playersObj, owner: ownObj});
         })
   });
 
