@@ -1,20 +1,22 @@
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">App Name</a>
+<nav class="navbar">
+    <img class='logo' src="./images/Draft_logo.png" alt="logo">
+    <h2 class="navbar-brand">Fantasy Draft Generator</h2>
     <div class="btn-group">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            Right-aligned menu
+            Menu
         </button>
-        <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Action</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
+        <div class="dropdown-menu dropdown-menu-right drop-left">
+            <a href="./draftpage-owner" class="dropdown-item btn btn-info" role="button">Draft Room</a>
+            <a href="./draft" class="dropdown-item btn btn-info" role="button">Draftboard</a>
+            <a href="./players" class="dropdown-item btn btn-info" role="button">List of Players</a>
+            <a href="./signin" class="dropdown-item btn btn-info" role="button">Log Out</a>
         </div>
     </div>
 </nav>
 
 
-<div class="container">
+<div class="container-fluid">
     <div class='row'>
         <div class='col'>
             <div class='card mt-4'>
@@ -315,7 +317,5 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>

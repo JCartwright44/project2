@@ -8,9 +8,10 @@
             Menu
         </button>
         <div class="dropdown-menu dropdown-menu-right drop-left">
-            <button class="dropdown-item" type="button">Dashboard</button>
-            <button class="dropdown-item" type="button">Draft Room</button>
-            <button class="dropdown-item" type="button">Log Out</button>
+            <a href="./draftpage-owner" class="dropdown-item btn btn-info" role="button">Draft Room</a>
+            <a href="./draft" class="dropdown-item btn btn-info" role="button">Draftboard</a>
+            <a href="./players" class="dropdown-item btn btn-info" role="button">List of Players</a>
+            <a href="./signin" class="dropdown-item btn btn-info" role="button">Log Out</a>
         </div>
     </div>
 </nav>
@@ -18,8 +19,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div>{{msg}}</div>
-        <div class="col-3 left equal">
+        <div class="col-3 equal">
+
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Draftboard</h5>
@@ -34,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 middle equal">
+        <div class="col-6 equal">
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Current draft class</h5>
@@ -70,7 +71,7 @@
             </div>
         </div>
         <div class="col-3 equal">
-            <div class="card right mt-4">
+            <div class="card mt-4">
                 <div class="card-body">
                     {{#each owner.teamRos}}
                     <h5 class="card-title myTeam">{{firstname}}'s team</h5>
@@ -85,16 +86,15 @@
                     {{/each}}
                     <div class='clockTime'></div>
                     <div class='clockTeam'></div>
-                    <hr>
                     <button class='pickSubmit'>Confirm draft pick</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col bottom equal">
+        <div class="col">
             <div class="card mt-4">
-                <div class="card-body messageBoard">
+                <div class="card-body">
                     <h5 class="card-title">Message board</h5>
                     <hr>
                     <p>Message board content</p>

@@ -2,14 +2,18 @@
   <img class='logo' src="./images/Draft_logo.png" alt="logo">
   <h2 class="navbar-brand">Fantasy Draft Generator</h2>
   <div class="btn-group">
-    <button type="button" class="btn btn-secondary dropdown-toggle"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
       Menu
     </button>
     <div class="dropdown-menu dropdown-menu-right drop-left">
-      <button class="dropdown-item" type="button">Dashboard</button>
-      <button class="dropdown-item" type="button">Draft Room</button>
-      <button class="dropdown-item" type="button">Log Out</button>
+      <a href="./dashboard-owner" class="dropdown-item btn btn-info" role="button">Dashboard</a>
+      <a href="./draftpage-owner" class="dropdown-item btn btn-info" role="button">Draft Room</a>
+      <a href="./draft" class="dropdown-item btn btn-info" role="button">Draftboard</a>
+      <a href="./players" class="dropdown-item btn btn-info" role="button">List of Players</a>
+      <a href="./signin" class="dropdown-item btn btn-info" role="button">Log Out</a>
+
     </div>
   </div>
 </nav>
@@ -23,6 +27,7 @@
         <div class="card-body">
           <h5 class="card-title">Draftboard</h5>
           <hr>
+
           <p class="helperText">Add your picks for your upcoming draft</p>
           {{#each onePlayer}}
           <p id='board1'>1. {{playerName}}</p>
@@ -63,6 +68,7 @@
             </table>
           </div>
         </div>
+
       </div>
     </div>
 

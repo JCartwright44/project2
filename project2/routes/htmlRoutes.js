@@ -59,6 +59,7 @@ module.exports = function (app, passport) {
       });
   });
 
+
   app.get("/players", function (req, res) {
     db.Players.findAll({})
       .then(function (dbPlayers) {
@@ -79,6 +80,7 @@ module.exports = function (app, passport) {
       .then(function () {
         return db.Players.findAll({ where: { id: 3 } });
       })
+
       .then(function (onePlayer) {
         playersObj.onePlayer = onePlayer;
         
