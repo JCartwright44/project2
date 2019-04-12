@@ -5,7 +5,7 @@ module.exports = function (app, passport) {
   // Load index page
   app.get("/", function (req, res) {
     db.Players.findAll({}).then(function (Players) {
-      res.render("signup", {
+      res.render("signin", {
         msg: "Welcome!",
         examples: Players
       });
@@ -14,7 +14,7 @@ module.exports = function (app, passport) {
   app.get('/signup', authController.signup);
   app.get('/signin', authController.signin);
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/dashboard-owner',
+    successRedirect: '/draftpage-owner',
 
     failureRedirect: '/signup'
   }
