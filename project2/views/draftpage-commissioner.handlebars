@@ -1,14 +1,16 @@
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">App Name</a>
+<nav class="navbar">
+    <img class='logo' src="./images/Draft_logo.png" alt="logo">
+    <h2 class="navbar-brand">Fantasy Draft Generator</h2>
     <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        <button type="button" class="btn btn-secondary dropdown-toggle"
+            data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            Right-aligned menu
+            Menu
         </button>
-        <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Action</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
+        <div class="dropdown-menu dropdown-menu-right drop-left">
+            <button class="dropdown-item" type="button">Dashboard</button>
+            <button class="dropdown-item" type="button">Draft Room</button>
+            <button class="dropdown-item" type="button">Log Out</button>
         </div>
     </div>
 </nav>
@@ -16,57 +18,84 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3 equal">
+        <div>{{msg}}</div>
+        <div class="col-3 left equal">
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Draftboard</h5>
                     <hr>
-                    <p class="helperText">Add your picks for your upcoming draft</p>
-                    <p id='board1'>1. First round pick</p>
-                    <p id='board2'>2. Second round pick</p>
-                    <p id='board3'>3. Third round pick</p>
-                    <p id='board4'>4. Fourth round pick</p>
-                    <p id='board5'>5. Fifth round pick</p>
+                    <p class="helperText">Add your picks for your upcoming
+                        draft</p>
+                    {{#each examples}}
+                    <p id='board1'>1. {{playerName}}</p>
+                    <p id='board2'>2. {{playerName}}</p>
+                    <p id='board3'>3. {{playerName}}</p>
+                    <p id='board4'>4. {{playerName}}</p>
+                    <p id='board5'>5. {{playerName}}</p>
+                    {{/each}}
                 </div>
             </div>
         </div>
-        <div class="col-6 equal">
+        <div class="col-6 middle equal">
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Current draft class</h5>
                     <hr>
-                    <p class='pos' id='qb'>Quarterback</p>
-                    <p class='pos' id='rb'>Runningback</p>
-                    <p class='pos' id='wr'>Wide Reciever</p>
-                    <p class='pos' id='te'>Tight End</p>
-                    <p class='pos' id='all'>All</p>
-                    <div class='playerTable'></div>
+                    <div class='playerTable'>
+                        <table class="table">
+                            <thead>
+                                <tr class='table'>
+                                    <th scope="col" id='nameHead'>Name</th>
+                                    <th scope="col" id='collegeHead'>
+                                        College</th>
+                                    <th scope="col" id='heightHead'>Hgt
+                                    </th>
+                                    <th scope="col" id='weightHead'>Wgt
+                                    </th>
+                                    <th scope="col" id='adpHead'>ADP</th>
+                                    <th scope="col" id='add'>Add</th>
+                                </tr>
+                            </thead>
+                            <tbody>{{#each examples}}
+                                <tr class='table'>
+                                    <td id='name'>{{playerName}}</td>
+                                    <td id='college'>{{college}}</td>
+                                    <td id='height'>{{height}}</td>
+                                    <td id='weight'>{{weight}}</td>
+                                    <td id='ADP'>{{adp}}</td>
+                                    {{/each}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-
         <div class="col-3 equal">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title myTeam">My team</h5>
-                    <button class='chgTeam'>Change team</button>
+            <div class="card right mt-4">
+                <div class="card-body">{{#each teamRos}}
+                    <h5 class="card-title myTeam">{{firstname}}'s Team</h5>
+                    {{/each}}
                     <hr id='hr'>
-                    <p class='rd1'>Round 1: </p>
-                    <p class='rd2'>Round 2: </p>
-                    <p class='rd3'>Round 3: </p>
-                    <p class='rd4'>Round 4: </p>
-                    <p class='rd5'>Round 5: </p>
+                    
+                    <p class='rd1'>Round 1: {{email}}</p>
+                    <p class='rd2'>Round 2: {{playerTaken}}</p>
+                    <p class='rd3'>Round 3: {{playerTaken}}</p>
+                    <p class='rd4'>Round 4: {{playerTaken}}</p>
+                    <p class='rd5'>Round 5: {{playerTaken}}</p>
+                    
                     <div class='clockTime'></div>
                     <div class='clockTeam'></div>
+                    <hr>
                     <button class='pickSubmit'>Confirm draft pick</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col bottom equal">
             <div class="card mt-4">
-                <div class="card-body">
+                <div class="card-body messageBoard">
                     <h5 class="card-title">Message board</h5>
                     <hr>
                     <p>Message board content</p>
