@@ -1,0 +1,88 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fantasy Draft Generator</a>
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle"
+            data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Right-aligned menu
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+            <button class="dropdown-item" type="button">Action</button>
+            <button class="dropdown-item" type="button">Another
+                action</button>
+            <button class="dropdown-item" type="button">Something else
+                here</button>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div>{{msg}}</div>
+    <div class="col-2 equal">
+        <div class="card mt-4">
+            <div class="card-body">
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-8 equal">
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Current draft class</h5>
+                <hr>
+                <div class='playerTable'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='nameHead'>Name</th>
+                                <th scope="col" id='collegeHead'>College
+                                </th>
+                                <th scope="col" id='heightHead'>Hgt</th>
+                                <th scope="col" id='weightHead'>Wgt</th>
+                                <th scope="col" id='adpHead'>ADP</th>
+                            </tr>
+                        </thead>
+                        <tbody>{{#each examples}}
+                            <tr class='table'>
+                                <td id='name'>{{playerName}}</td>
+                                <td id='college'>{{college}}</td>
+                                <td id='height'>{{height}}</td>
+                                <td id='weight'>{{weight}}</td>
+                                <td id='ADP'>{{adp}}</td>
+                                {{/each}}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2 equal">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">My teams</h5>
+                    <hr>
+                    <p class="helperText">Move to My leagues</p>
+                    <div class="myTeams"></div>
+                    <button class='newTeam'>New team</button>
+                    <button class='newLeague'>New league</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Message board</h5>
+                    <hr>
+                    <p>Message board content</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
