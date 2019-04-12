@@ -22,7 +22,7 @@ module.exports = function (app, passport) {
   app.get('/dashboard-owner', isLoggedIn, authController.dashboard);
   app.get('/logout', authController.logout);
   app.post('/signin', passport.authenticate('local-signin', {
-    successRedirect: '/dashboard-owner',
+    successRedirect: '/draftpage-owner',
 
     failureRedirect: '/signin'
   }
@@ -72,7 +72,7 @@ module.exports = function (app, passport) {
 
   app.get("/draftpage-owner", function (req, res) {
     var playersObj = {};
-    
+    console.log("User", req.user)
     var playerPromise = db.Players.findAll({ limit: 15 })
       .then(function (dbExamples) {
         playersObj.examples = dbExamples;
@@ -91,7 +91,7 @@ module.exports = function (app, passport) {
           ownObj.owners = dbOwners;
         })
         .then(function () {
-          return db.owners.findAll({ where: { id: 1 } });
+          return db.owners.findAll({ where: { id: req.user ? req.user.id : 1 } });
         })
         .then(function (teamRos) {
           ownObj.teamRos = teamRos;
