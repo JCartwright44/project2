@@ -2,8 +2,7 @@
     <img class='logo' src="./images/Draft_logo.png" alt="logo">
     <h2 class="navbar-brand">Fantasy Draft Generator</h2>
     <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle"
-            data-toggle="dropdown" aria-haspopup="true"
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             Menu
         </button>
@@ -98,9 +97,18 @@
                 <div class="card-body">
                     <h5 class="card-title">Message board</h5>
                     <hr>
-                    <p>Message board content</p>
+                    <div id="message-area"></div>
+                    <p class="cool-font">Name</p>
+                    <input class="form-control" type="text" id="author" placeholder="Enter Your Name">
+                    <br>
+                    <p class="cool-font">Message</p>
+                    <textarea class="form-control" rows="3" id="message-box"
+                        placeholder="Enter message Here!"></textarea>
+                    <button id="message-submit" class="btn btn-lg pull-right">Submit!</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+  <script type="text/javascript" src="../public/js/index.js"></script>
