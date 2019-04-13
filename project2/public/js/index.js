@@ -6,7 +6,7 @@ var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveExample: function (example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -16,13 +16,13 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getExamples: function () {
     return $.ajax({
       url: "api/examples",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteExample: function (id) {
     return $.ajax({
       url: "api/examples/" + id,
       type: "DELETE"
@@ -31,9 +31,9 @@ var API = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+var refreshExamples = function () {
+  API.getExamples().then(function (data) {
+    var $examples = data.map(function (example) {
       var $a = $("<a>")
         .text(example.text)
         .attr("href", "/example/" + example.id);
@@ -61,7 +61,7 @@ var refreshExamples = function() {
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
 
   var example = {
@@ -74,7 +74,7 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveExample(example).then(function() {
+  API.saveExample(example).then(function () {
     refreshExamples();
   });
 
@@ -84,12 +84,12 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
+  API.deleteExample(idToDelete).then(function () {
     refreshExamples();
   });
 };
@@ -98,8 +98,59 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-$("#add").on("click", function() {
+$("#add").on("click", function () {
   // var newPick = {
   //   name: this.name
   // }
+});
+
+$.get("/api/all", function (data) {
+  if (data.length !== 0) {
+    for (var i = 0; i < data.length; i++) {
+      var row = $("<div>");
+      row.addClass("message");
+
+      row.append("<p>" + data[i].author + " messaged.. </p>");
+      row.append("<p>" + data[i].body + "</p>");
+      row.append(
+        "<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>"
+      );
+
+      $("#message-area").prepend(row);
+    }
+  }
+});
+
+$("#message-submit").on("click", function (event) {
+  event.preventDefault();
+  console.log('clicked!')
+
+  var newMessage = {
+    author: $("#author")
+      .val()
+      .trim(),
+    body: $("#message-box")
+      .val()
+      .trim(),
+    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+  };
+
+  console.log(newMessage);
+
+  $.post("/api/new", newMessage)
+    .then(function () {
+      var row = $("<div>");
+      row.addClass("message");
+
+      row.append("<p>" + newMessage.author + " messaged: </p>");
+      row.append("<p>" + newMessage.body + "</p>");
+      row.append(
+        "<p>At " + moment(newMessage.created_at).format("h:mma on dddd") + "</p>"
+      );
+
+      $("#message-area").prepend(row);
+    });
+
+  $("#author").val("");
+  $("#message-box").val("");
 });
