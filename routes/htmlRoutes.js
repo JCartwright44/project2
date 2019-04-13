@@ -5,7 +5,7 @@ module.exports = function (app, passport) {
   // Load index page
   app.get("/", function (req, res) {
     db.Players.findAll({}).then(function (Players) {
-      res.render("signin", {
+      res.render("signup", {
         msg: "Welcome!",
         examples: Players
       });
@@ -14,7 +14,7 @@ module.exports = function (app, passport) {
   app.get('/signup', authController.signup);
   app.get('/signin', authController.signin);
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/draftpage-owner',
+    successRedirect: '/dashboard-owner',
 
     failureRedirect: '/signup'
   }
@@ -95,9 +95,25 @@ module.exports = function (app, passport) {
         })
         .then(function (teamRos) {
           ownObj.teamRos = teamRos;
+        });
+
+      // var draftObj = {};
+      // var playerPromise = db.Players.findAll({})
+      // var ownerPromise = db.owners.findAll({})
+      //   .then(function (dbPlayers) {
+      //     draftObj.Players = dbPlayers;
+      //   })
+      //   .then(function () {
+      //     return db.Players.findAll({ where: {id: 1 } });
+      //   })
+      //   .then(function (dbOwners) {
+      //     ownObj.owners = dbOwners;
+      //   })
+      //   .then(function (draftPlayer) {
+      //     ownObj.teamRos = teamRos;
           
 
-        });
+      //   });
         Promise.all([playerPromise, ownerPromise]).then(function(){
           console.log("Promise fulfilled")
           console.log("playerObj:",playersObj);
