@@ -1,5 +1,5 @@
 var db = require("../models");
-var authController = require('../controllers/authcontroller.js');
+var authController = require("../controllers/authcontroller.js");
 
 module.exports = function (app, passport) {
   // Load index page
@@ -11,20 +11,20 @@ module.exports = function (app, passport) {
       });
     });
   });
-  app.get('/signup', authController.signup);
-  app.get('/signin', authController.signin);
-  app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/dashboard-owner',
+  app.get("/signup", authController.signup);
+  app.get("/signin", authController.signin);
+  app.post("/signup", passport.authenticate("local-signup", {
+    successRedirect: "/dashboard-owner",
 
-    failureRedirect: '/signup'
+    failureRedirect: "/signup"
   }
   ));
-  app.get('/dashboard-owner', isLoggedIn, authController.dashboard);
-  app.get('/logout', authController.logout);
-  app.post('/signin', passport.authenticate('local-signin', {
-    successRedirect: '/draftpage-owner',
+  app.get("/dashboard-owner", isLoggedIn, authController.dashboard);
+  app.get("/logout", authController.logout);
+  app.post("/signin", passport.authenticate("local-signin", {
+    successRedirect: "/draftpage-owner",
 
-    failureRedirect: '/signin'
+    failureRedirect: "/signin"
   }
 
   ));
@@ -157,6 +157,6 @@ function isLoggedIn(req, res, next) {
 
     return next();
 
-  res.redirect('/signin');
+  res.redirect("/signin");
 
 }
