@@ -1,0 +1,319 @@
+<nav class="navbar">
+    <img class='logo' src="./images/Draft_logo.png" alt="logo">
+    <h2 class="navbar-brand">Fantasy Draft Generator</h2>
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Menu
+        </button>
+        <div class="dropdown-menu dropdown-menu-right drop-left">
+            <a href="./draftpage-owner" class="dropdown-item btn btn-info" role="button">Draft Room</a>
+            <a href="./draft" class="dropdown-item btn btn-info" role="button">Draftboard</a>
+            <a href="./players" class="dropdown-item btn btn-info" role="button">List of Players</a>
+            <a href="./signin" class="dropdown-item btn btn-info" role="button">Log Out</a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class='row'>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm1avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Kyle's Team</th>
+                                <td id='tm1rd1'>Josh Jacobs</td>
+                                <td id='tm1rd2'>NKeal Harry</td>
+                                <td id='tm1rd3'>Parris Campbell</td>
+                                <td id='tm1rd4'>David Sills</td>
+                                <td id='tm1rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm3avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Jason's Team</th>
+                                <td id='tm1rd1'>Hakeem Butler</td>
+                                <td id='tm1rd2'>Kyler Murray</td>
+                                <td id='tm1rd3'>David Montgomery</td>
+                                <td id='tm1rd4'>TJ Hockenson</td>
+                                <td id='tm1rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm3avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr class='table'>
+                                <th scope="row">Lovdeep's Team</th>
+                                <td id='tm1rd1'>DK Metcalf</td>
+                                <td id='tm1rd2'>Kelvin Harmon</td>
+                                <td id='tm1rd3'>Miles Sanders</td>
+                                <td id='tm1rd4'>Noah Fant</td>
+                                <td id='tm1rd5'></td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm4avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Team 4</th>
+                                <td id='tm4rd1'></td>
+                                <td id='tm4rd2'></td>
+                                <td id='tm4rd3'></td>
+                                <td id='tm4rd4'></td>
+                                <td id='tm4rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm5avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Team 5</th>
+                                <td id='tm5rd1'></td>
+                                <td id='tm5rd2'></td>
+                                <td id='tm5rd3'></td>
+                                <td id='tm5rd4'></td>
+                                <td id='tm5rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm6avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Team 6</th>
+                                <td id='tm6rd1'></td>
+                                <td id='tm6rd2'></td>
+                                <td id='tm6rd3'></td>
+                                <td id='tm6rd4'></td>
+                                <td id='tm6rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm7avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Team 7</th>
+                                <td id='tm7rd1'></td>
+                                <td id='tm7rd2'></td>
+                                <td id='tm7rd3'></td>
+                                <td id='tm7rd4'></td>
+                                <td id='tm7rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm8avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Team 8</th>
+                                <td id='tm8rd1'></td>
+                                <td id='tm8rd2'></td>
+                                <td id='tm8rd3'></td>
+                                <td id='tm8rd4'></td>
+                                <td id='tm8rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm9avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Team 9</th>
+                                <td id='tm9rd1'></td>
+                                <td id='tm9rd2'></td>
+                                <td id='tm9rd3'></td>
+                                <td id='tm9rd4'></td>
+                                <td id='tm9rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card mt-4'>
+                <div class='card-body'>
+                    <table class="table">
+                        <thead>
+                            <tr class='table'>
+                                <th scope="col" id='tm10avatar'></th>
+                                <th scope="col" id='rd1'>Rd 1</th>
+                                <th scope="col" id='rd2'>Rd 2</th>
+                                <th scope="col" id='rd3'>Rd 3</th>
+                                <th scope="col" id='rd4'>Rd 4</th>
+                                <th scope="col" id='rd5'>Rd 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class='table'>
+                                <th scope="row">Team 10</th>
+                                <td id='tm10rd1'></td>
+                                <td id='tm10rd2'></td>
+                                <td id='tm10rd3'></td>
+                                <td id='tm10rd4'></td>
+                                <td id='tm10rd5'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Message board</h5>
+                    <hr>
+                    <p>Message board content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

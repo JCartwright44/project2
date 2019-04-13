@@ -1,8 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-
-
 <nav class="navbar">
     <img class='logo' src="./images/Draft_logo.png" alt="logo">
     <h2 class="navbar-brand">Fantasy Draft Generator</h2>
@@ -13,32 +8,35 @@
             Menu
         </button>
         <div class="dropdown-menu dropdown-menu-right drop-left">
-            <a href="./draftpage-owner" class="dropdown-item btn btn-info" role="button">Draft Room</a>
-            <a href="./draft" class="dropdown-item btn btn-info" role="button">Draftboard</a>
-            <a href="./players" class="dropdown-item btn btn-info" role="button">List of Players</a>
-            <a href="./signin" class="dropdown-item btn btn-info" role="button">Log Out</a>
+            <button class="dropdown-item" type="button">Dashboard</button>
+            <button class="dropdown-item" type="button">Draft Room</button>
+            <button class="dropdown-item" type="button">Log Out</button>
         </div>
     </div>
 </nav>
+
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3 equal">
-            <div>{{msg}}</div>
+        <div>{{msg}}</div>
+        <div class="col-3 left equal">
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Draftboard</h5>
                     <hr>
                     <p class="helperText">Add your picks for your upcoming
                         draft</p>
-                    <p id='board1'>1. Nkeal Harry</p>
-                    <p id='board2'>2. Josh Jacobs</p>
-                    <p id='board3'>3. Kyler Murray</p>
-                    <p id='board4'>4. Mike Weber</p>
-                    <p id='board5'>5. Parris Campbell</p>
+                    {{#each examples}}
+                    <p id='board1'>1. {{playerName}}</p>
+                    <p id='board2'>2. {{playerName}}</p>
+                    <p id='board3'>3. {{playerName}}</p>
+                    <p id='board4'>4. {{playerName}}</p>
+                    <p id='board5'>5. {{playerName}}</p>
+                    {{/each}}
                 </div>
             </div>
         </div>
-        <div class="col-6 equal">
+        <div class="col-6 middle equal">
             <div class="card mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Current draft class</h5>
@@ -58,14 +56,13 @@
                                     <th scope="col" id='add'>Add</th>
                                 </tr>
                             </thead>
-                            <tbody>{{#each players.examples}}
+                            <tbody>{{#each examples}}
                                 <tr class='table'>
                                     <td id='name'>{{playerName}}</td>
                                     <td id='college'>{{college}}</td>
                                     <td id='height'>{{height}}</td>
                                     <td id='weight'>{{weight}}</td>
                                     <td id='ADP'>{{adp}}</td>
-                                    <td id="drafted"><button id="draft">Draft!</button></td>
                                     {{/each}}
                                 </tr>
                             </tbody>
@@ -75,30 +72,30 @@
             </div>
         </div>
         <div class="col-3 equal">
-            <div class="card mt-4">
-                <div class="card-body">
-                    {{#each owner.teamRos}}
+            <div class="card right mt-4">
+                <div class="card-body">{{#each teamRos}}
                     <h5 class="card-title myTeam">{{firstname}}'s Team</h5>
                     {{/each}}
                     <hr id='hr'>
-                    {{#each players.onePlayer}}
-                    <p class='rd1' id="player1">Round 1: {{playerTaken}}</p>
-                    <p class='rd2' id="player2">Round 2: {{playerTaken}}</p>
-                    <p class='rd3' id="player3">Round 3: {{playerTaken}}</p>
-                    <p class='rd4' id="player4">Round 4: {{playerTaken}}</p>
-                    <p class='rd5' id="player5">Round 5: {{playerTaken}}</p>
-                    {{/each}}
+                    
+                    <p class='rd1'>Round 1: {{email}}</p>
+                    <p class='rd2'>Round 2: {{playerTaken}}</p>
+                    <p class='rd3'>Round 3: {{playerTaken}}</p>
+                    <p class='rd4'>Round 4: {{playerTaken}}</p>
+                    <p class='rd5'>Round 5: {{playerTaken}}</p>
+                    
                     <div class='clockTime'></div>
                     <div class='clockTeam'></div>
+                    <hr>
                     <button class='pickSubmit'>Confirm draft pick</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col bottom equal">
             <div class="card mt-4">
-                <div class="card-body">
+                <div class="card-body messageBoard">
                     <h5 class="card-title">Message board</h5>
                     <hr>
                     <p>Message board content</p>
@@ -107,12 +104,3 @@
         </div>
     </div>
 </div>
-<script>
-    console.log("hello")
-$("#draft").on("click", function() {
-     $("#player1").append('Josh Jacobs')
-        
-    });
-
-</script>
-
